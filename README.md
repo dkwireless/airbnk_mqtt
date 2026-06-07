@@ -18,9 +18,19 @@ Supported devices (using an ESP32 device as a Wifi-to-Bluetooth bridge):
 1. a) Have an ESP32 device with Tasmota Bluetooth firmware installed (see tasmota32-bluetooth.bin here: http://ota.tasmota.com/tasmota32/release/ for release version or here http://ota.tasmota.com/tasmota32/ for development version), **OR**
 
    b) Have an ESP32 device with @formatBCE's custom firmware (see https://github.com/formatBCE/Airbnk-MQTTOpenGateway)
-2. Set up a MQTT broker (mosquitto or HA add-on: see https://www.home-assistant.io/docs/mqtt/broker/).
-3. Configure the ESP32 to connect to it. In the MQTT Configuration page, take note of the MQTT topic of the ESP32, or set it at your desire.
-4. Determine the MAC address of your lock.
+
+   c) ESPHome external component (ESPHome 2026.5+, ESP-IDF, native NimBLE)
+    
+    - Native ESPHome component — no Tasmota, no PlatformIO custom firmware
+    - Works with ESPHome CLI or ESPHome add-on in HA
+    - Full command support — lock/unlock, advertisement parsing, command results
+    - Connect-on-demand BLE GATT (not persistent ble_client)
+    - Standalone NimBLE host (no conflict with ESPHome's BLE stack)
+    - Repository: https://github.com/dkwireless/esp32-door-lock
+
+3. Set up a MQTT broker (mosquitto or HA add-on: see https://www.home-assistant.io/docs/mqtt/broker/).
+4. Configure the ESP32 to connect to it. In the MQTT Configuration page, take note of the MQTT topic of the ESP32, or set it at your desire.
+5. Determine the MAC address of your lock.
 
 # Installation:
 
